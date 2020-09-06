@@ -27,12 +27,12 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import static org.junit.Assert.*;
 
 @RunWith(Cucumber.class)
 public class RecurringMeetingStepDefinations extends Base {
@@ -79,7 +79,8 @@ public class RecurringMeetingStepDefinations extends Base {
 	public void i_check_if_the_meeting_is_created_as_expected() throws Throwable {
 		List<AndroidElement> meeting = driver
 				.findElementsByXPath("//*[contains(@content-desc,'Recurring Team Catch Up')]");
-		System.out.println(meeting.size());
+		
+		assertTrue(meeting.size()>1);
 
 	}
 
@@ -203,8 +204,6 @@ public class RecurringMeetingStepDefinations extends Base {
 			aep.getAddPeopleLabel().click();
 			app.getAddPeopleTextField().sendKeys(invitee[i]);
 			app.getEmailLabel().click();
-//			driver.findElement(By.xpath("//*[@text='" + invitee[i] + "']")).click();
-
 		}
 		app.getDoneButton().click();
 

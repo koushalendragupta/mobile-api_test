@@ -13,7 +13,7 @@ Scenario Outline: Create a new recurring(3 days a week) meeting, and make sure i
 	
 	Examples: 
 		|title                   |nonWorkingDay	 |hrsMinutes |invitee 				    |
-		|Recurring Team Catch Up |SUNDAY	  	 |1:20		 |kg@gmail.com,tg@gmail.com |
+		|Recurring Team Catch Up |SUNDAY	  	 |0:20		 |kg@gmail.com,tg@gmail.com |
 		
 		
 		

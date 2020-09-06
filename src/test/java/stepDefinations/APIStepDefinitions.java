@@ -22,7 +22,7 @@ import pojoClasses.GetWeatherForecast;
 import resources.Utility;
 
 @RunWith(Cucumber.class)
-public class MyStepDefinitions extends Utility {
+public class APIStepDefinitions extends Utility {
 	RequestSpecification res;
 	ResponseSpecification resspec;
 	Response response;

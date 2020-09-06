@@ -3,17 +3,186 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-08-31T16:01:37.200Z",
-        "line": 15,
-        "name": "A happy holidaymaker",
+        "start_timestamp": "2020-09-06T09:58:38.835Z",
+        "line": 16,
+        "name": "Create a new recurring(3 days a week) meeting, and make sure it doesn\u0027t repeat on successive days",
         "description": "",
-        "id": "validating-weather-api;a-happy-holidaymaker;;2",
+        "id": "creating-recurring-meeting;create-a-new-recurring(3-days-a-week)-meeting--and-make-sure-it-doesn-t-repeat-on-successive-days;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 188100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "RecurringMeetingStepDefinations.tearDown(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 550905300,
+              "duration": 8827047400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I have launched the Calendar App",
+            "match": {
+              "location": "RecurringMeetingStepDefinations.i_have_launched_the_calendar_app_and()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 260800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "It is not a SUNDAY",
+            "match": {
+              "arguments": [
+                {
+                  "val": "SUNDAY",
+                  "offset": 12
+                }
+              ],
+              "location": "RecurringMeetingStepDefinations.it_is_not_a(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 12488900,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Meeting is not repeated on successive days",
+            "match": {
+              "location": "RecurringMeetingStepDefinations.meeting_is_not_repeated_on_successive_days()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8211713600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I want to book a meeting with the title Recurring Team Catch Up",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Recurring Team Catch Up",
+                  "offset": 40
+                }
+              ],
+              "location": "RecurringMeetingStepDefinations.i_want_to_book_a_meeting_with_the_title(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 19601548400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Set Meeting duration as 1:20 in the evening",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1:20",
+                  "offset": 24
+                }
+              ],
+              "location": "RecurringMeetingStepDefinations.set_meeting_duration_as_in_the_evening(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8499616000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I invite kg@gmail.com,tg@gmail.com of people",
+            "match": {
+              "arguments": [
+                {
+                  "val": "kg@gmail.com,tg@gmail.com",
+                  "offset": 9
+                }
+              ],
+              "location": "RecurringMeetingStepDefinations.i_invite_of_people(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3151296500,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I save the meeting",
+            "match": {
+              "location": "RecurringMeetingStepDefinations.i_save_the_meeting()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1922403900,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I Check if the meeting is created as expected",
+            "match": {
+              "location": "RecurringMeetingStepDefinations.i_check_if_the_meeting_is_created_as_expected()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UIMobileTest"
+          }
+        ]
+      }
+    ],
+    "name": "Creating Recurring Meeting",
+    "description": "",
+    "id": "creating-recurring-meeting",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/RecurringMeeting.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-09-06T09:59:29.105Z",
+        "line": 15,
+        "name": "A happy holidaymaker",
+        "description": "",
+        "id": "validating-weather-api;a-happy-holidaymaker;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 54400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "RecurringMeetingStepDefinations.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 753855800,
               "status": "passed"
             },
             "line": 5,
@@ -35,7 +204,7 @@
           },
           {
             "result": {
-              "duration": 3269374900,
+              "duration": 1651205500,
               "status": "passed"
             },
             "line": 6,
@@ -53,7 +222,7 @@
           },
           {
             "result": {
-              "duration": 1515100,
+              "duration": 2229500,
               "status": "passed"
             },
             "line": 7,
@@ -71,7 +240,7 @@
           },
           {
             "result": {
-              "duration": 42600,
+              "duration": 75200,
               "status": "passed"
             },
             "line": 8,
@@ -89,19 +258,19 @@
           },
           {
             "result": {
-              "duration": 15940700,
+              "duration": 1098500,
               "status": "passed"
             },
             "line": 9,
-            "name": "I can see the temperature is between \"9\" to \"30\" degrees in \"Sydney\"",
+            "name": "I can see the temperature is between \"5\" to \"35\" degrees in \"Sydney\"",
             "match": {
               "arguments": [
                 {
-                  "val": "9",
+                  "val": "5",
                   "offset": 38
                 },
                 {
-                  "val": "30",
+                  "val": "35",
                   "offset": 45
                 },
                 {
@@ -115,7 +284,7 @@
           },
           {
             "result": {
-              "duration": 357500,
+              "duration": 298000,
               "status": "passed"
             },
             "line": 10,
@@ -127,7 +296,7 @@
           },
           {
             "result": {
-              "duration": 49400,
+              "duration": 92900,
               "status": "passed"
             },
             "line": 11,
@@ -146,7 +315,7 @@
         ],
         "tags": [
           {
-            "name": "@Regression"
+            "name": "@APITest"
           }
         ]
       }

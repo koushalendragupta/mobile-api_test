@@ -19,10 +19,10 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import pojoClasses.GetWeatherForecast;
-import resources.Utils;
+import resources.Utility;
 
 @RunWith(Cucumber.class)
-public class MyStepDefinitions extends Utils {
+public class MyStepDefinitions extends Utility {
 	RequestSpecification res;
 	ResponseSpecification resspec;
 	Response response;
@@ -32,13 +32,13 @@ public class MyStepDefinitions extends Utils {
 	public void i_like_to_holiday_in_something_and_i_only_like_to_holiday_on_something(String city, String day)
 			throws Throwable {
 		res = given().spec(requestSpecification(city));
-		Utils.setDayOfWeek(day);
+		Utility.setDayOfWeek(day);
 	}
 
 	@When("^I look up the the weather forecast for the next \"([^\"]*)\" days$")
 	public void i_look_up_the_the_weather_forecast_for_the_next_something_days(String numberof) throws Throwable {
 
-		Utils.setNumberOfDays(numberof);
+		Utility.setNumberOfDays(numberof);
 
 		resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
 
@@ -63,13 +63,13 @@ public class MyStepDefinitions extends Utils {
 	public void i_can_see_the_temperature_is_between_something_to_something_degrees_in_something(String mintemp,
 			String maxtemp, String city) throws Throwable {
 
-		ArrayList<String> expecteddays = Utils.getDates();
+		ArrayList<String> expecteddays = Utility.getDates();
 
 		for (int j = 0; j < expecteddays.size(); j++) {
 			for (int i = 0; i < gf.getData().size(); i++) {
 				if (gf.getData().get(i).getDatetime().equalsIgnoreCase(expecteddays.get(j))) {
 					assertTrue(
-							"Temprature is in between 20 to 30 on " + Utils.getDayOfWeek() + " Date "
+							"Temprature is in between 20 to 30 on " + Utility.getDayOfWeek() + " Date "
 									+ expecteddays.get(j),
 							gf.getData().get(i).getHigh_temp() < Double.parseDouble(maxtemp)
 									&& gf.getData().get(i).getLow_temp() > Double.parseDouble(mintemp));
@@ -81,7 +81,7 @@ public class MyStepDefinitions extends Utils {
 
 	@And("^Check If it has rained previous days$")
 	public void check_if_it_has_rained_previous_days() throws Throwable {
-		ArrayList<String> expecteddays = Utils.getDates();
+		ArrayList<String> expecteddays = Utility.getDates();
 		boolean flag = true;
 
 		for (int i = 0; i < gf.getData().size(); i++) {
@@ -95,7 +95,7 @@ public class MyStepDefinitions extends Utils {
 			}
 		}
 
-		assertTrue("Its not rained before first " + Utils.getDayOfWeek() + " :", flag);
+		assertTrue("Its not rained before first " + Utility.getDayOfWeek() + " :", flag);
 	}
 
 	@And("^I can see that it won't be snowing for the next \"([^\"]*)\" days$")

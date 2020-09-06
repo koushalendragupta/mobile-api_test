@@ -1,6 +1,6 @@
 Feature: Validating Weather API 
 
-@Regression 
+@APITest 
 Scenario Outline: A happy holidaymaker 
 	Given I like to holiday in "<city>" and I only like to holiday on "<day>" 
 	When I look up the the weather forecast for the next "<numberof>" days 
@@ -12,7 +12,7 @@ Scenario Outline: A happy holidaymaker
 	
 	Examples: 
 		|city 	 |day 	    |numberof |minTemp	|maxTemp	|responseType					|
-		|Sydney  |THURSDAY  |14		  |20		|30			|application/json; charset=utf-8|
+		|Sydney  |THURSDAY  |14		  |5		|35			|application/json; charset=utf-8|
 		
 		
 		

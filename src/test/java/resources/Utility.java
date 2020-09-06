@@ -10,8 +10,12 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
+
+import io.appium.java_client.android.AndroidElement;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -21,18 +25,90 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class Utils {
+public class Utility {
 
 	public static RequestSpecification req;
 	private static String dayOfWeek;
 	private static String numberOfDays;
+	private static String nonWorkingDay;
+	private static String meetingDay1;
+	private static String meetingDay2;
+	private static String meetingDay3;
+	private static String hours;
+	private static String mins;
+	private static String[] emails;
+	private static String meetingName;
+	
+	public static String getMeetingName() {
+		return meetingName;
+	}
+
+	public static void setMeetingName(String meetingName) {
+		Utility.meetingName = meetingName;
+	}
+
+	public static String[] getEmails() {
+		return emails;
+	}
+
+	public static void setEmails(String[] emails) {
+		Utility.emails = emails;
+	}
+
+	public static String getHours() {
+		return hours;
+	}
+
+	public static void setHours(String hours) {
+		Utility.hours = hours;
+	}
+
+	public static String getMins() {
+		return mins;
+	}
+
+	public static void setMins(String mins) {
+		Utility.mins = mins;
+	}
+
+	public static String getMeetingDay1() {
+		return meetingDay1;
+	}
+
+	public static void setMeetingDay1(String meetingDay1) {
+		Utility.meetingDay1 = meetingDay1;
+	}
+
+	public static String getMeetingDay2() {
+		return meetingDay2;
+	}
+
+	public static void setMeetingDay2(String meetingDay2) {
+		Utility.meetingDay2 = meetingDay2;
+	}
+
+	public static String getMeetingDay3() {
+		return meetingDay3;
+	}
+
+	public static void setMeetingDay3(String meetingDay3) {
+		Utility.meetingDay3 = meetingDay3;
+	}
+	
+	public static String getNonWorking() {
+		return nonWorkingDay;
+	}
+
+	public static void setNonWorking(String nonWorkingDay) {
+		Utility.nonWorkingDay = nonWorkingDay;
+	}
 
 	public static String getDayOfWeek() {
 		return dayOfWeek;
 	}
 
 	public static void setDayOfWeek(String dayOfWeek) {
-		Utils.dayOfWeek = dayOfWeek;
+		Utility.dayOfWeek = dayOfWeek;
 	}
 
 	public static String getNumberOfDays() {
@@ -40,7 +116,7 @@ public class Utils {
 	}
 
 	public static void setNumberOfDays(String numberOfDays) {
-		Utils.numberOfDays = numberOfDays;
+		Utility.numberOfDays = numberOfDays;
 	}
 
 	public RequestSpecification requestSpecification(String city) throws IOException {
@@ -78,5 +154,11 @@ public class Utils {
 		System.out.println("Thrusdays : " + dates);
 
 		return dates;
+	}
+
+	public static String convertFirstCharToUpperCase(String day) {		
+		day = Character.toUpperCase(day.charAt(0)) + day.substring(1);
+		
+		return day;	
 	}
 }

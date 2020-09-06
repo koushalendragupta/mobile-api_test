@@ -220,14 +220,10 @@ public class RecurringMeetingStepDefinations extends Base {
 
 	@After
 	public void tearDown(Scenario scenario) throws IOException {
-//	    if (scenario.isFailed()) {
-//	      final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-//	      scenario.embed(screenshot, "image/png");
-//	    }
-//		String path = System.getProperty("user.dir");
-
-//		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//		FileUtils.copyFile(src, new File(path + "screenshot.png"));
-
+	    if (scenario.isFailed()) {
+		String path = System.getProperty("user.dir");
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(src, new File(path + "//screenshot.png"));
+	    }
 	}
 }
